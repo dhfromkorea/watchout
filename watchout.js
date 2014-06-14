@@ -53,6 +53,17 @@ enemyCircles.enter()
 enemyCircles.transition()
             .duration(1000)
             .attr('r',gameOptions.radius);
+
+
+var moveEnemyCircles = function(){
+  enemyCircles.transition()
+            .duration(1000)
+            .attr('cx', function(){return axes.x(Math.random());})
+            .attr('cy', function(){return axes.y(Math.random());});
+};
+setInterval(function(){
+  return moveEnemyCircles();
+}, 2000);
 // update them
 //
 //
